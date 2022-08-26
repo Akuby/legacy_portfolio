@@ -1,0 +1,159 @@
+/* 초기화 */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../images/bg.webp) center / cover;
+  position: relative;
+  height: 5280px;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #312c86;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #887afa;
+  border-radius: 10px;
+}
+
+/* 배경 */
+#background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.bg_pattern {
+  position: absolute;
+  max-width: 780px;
+  background: no-repeat top / 100%;
+}
+.pattern-1 {
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 500px;
+  background-image: url(../images/pattern-1.png);
+}
+.pattern-2 {
+  top: 40vh;
+  right: 0;
+  width: 45%;
+  height: 950px;
+  background-image: url(../images/pattern-2.png);
+}
+.pattern-3 {
+  top: 40vh;
+  left: 0;
+  width: 40%;
+  height: 550px;
+  background-image: url(../images/pattern-3.png);
+}
+.pattern-4 {
+  top: 250vh;
+  left: 0;
+  width: 40%;
+  height: 950px;
+  transform: scaleX(-1);
+  background: url(../images/pattern-2.png) no-repeat top / 100%;
+}
+.pattern-5 {
+  top: 190vh;
+  right: 0;
+  width: 40%;
+  height: 550px;
+  transform: scaleX(-1);
+  background: url(../images/pattern-3.png) no-repeat top / 100%;
+}
+.pattern-6 {
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 550px;
+  background: url(../images/pattern-3.png) no-repeat top / 100%;
+}
+
+#bg_planet {
+  position: absolute;
+}
+#container {
+  margin: 0;
+  width: calc(100vw - 17px);
+  height: 100%;
+  position: absolute;
+}
+.star {
+  background-color: #f0f0f0;
+  width: 1.5px;
+  height: 1.5px;
+  position: absolute;
+  border: #f0f0f0 0px solid;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.5);
+  animation-name: glow;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0;
+    transform: scale(1, 1);
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(2, 2);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.bg_star {
+  position: absolute;
+  width: 20%;
+  height: 50vh;
+  background: url(../images/star-1.png) no-repeat top / 50%;
+}
+
+.star-1 {
+  left: 0;
+  top: 100px;
+}
+
+.star-2 {
+right: 0;
+top: 500px;
+}
+
+/* 헤더 */
+
+header {
+  position: relative;
+  z-index: 10;
+}
