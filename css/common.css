@@ -1,4 +1,7 @@
 /* 초기화 */
+html {
+  font-size: 10px;
+}
 * {
   box-sizing: border-box;
 }
@@ -154,6 +157,37 @@ top: 500px;
 /* 헤더 */
 
 header {
+  width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  font-family: 'Noto Sans KR';
+  padding-top: 150px;
+}
+
+header .title {
+  height: 5.5rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
   position: relative;
-  z-index: 10;
+}
+
+header .title > p:last-child {
+  position: absolute;
+  bottom: 0;
+  right: 16rem;
+}
+
+header .title > p:last-child::before {
+  content: "";
+  position: absolute;
+  left: -18rem;
+  top: 1.5rem;
+  width: 17rem;
+  border-bottom: 1px solid #fff;
+}
+
+header h1 {
+  font-size: 5.4rem;
 }
