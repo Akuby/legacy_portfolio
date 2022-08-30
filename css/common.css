@@ -88,7 +88,7 @@ a {
   top: 40vh;
   left: 0;
   width: 40%;
-  height: 10%;
+  height: 15%;
   background-image: url(../images/pattern-3.png);
 }
 
@@ -105,7 +105,7 @@ a {
   top: 190vh;
   right: 0;
   width: 40%;
-  height: 10%;
+  height: 15%;
   transform: scaleX(-1);
   background: url(../images/pattern-3.png) no-repeat top / 100%;
 }
@@ -114,7 +114,7 @@ a {
   bottom: 0;
   left: 0;
   width: 40%;
-  height: 10%;
+  height: 15%;
   background: url(../images/pattern-3.png) no-repeat top / 100%;
 }
 
@@ -303,11 +303,14 @@ header h1>span {
   display: grid;
   justify-content: center;
   padding: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
-  /* grid-template-rows: 100px 100px */
+  gap: 3rem;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .item {
+  width: 100%;
+  max-width: 38rem;
   background-color: #fff;
   border-radius: 2rem;
   padding: 3rem 2.8rem 0;
@@ -338,7 +341,6 @@ header h1>span {
   width: fit-content;
   font-weight: 700;
   font-size: 1.5rem;
-  position: relative;
 }
 
 .item>dl>dt::after {
@@ -358,10 +360,97 @@ header h1>span {
   word-break: keep-all;
 }
 
+.item .certi_list {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #673ab7;
+  margin-bottom: 3rem;
+}
+
+.certi_list-item {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.certi_list-item>li {
+  margin: 0.9rem 0;
+}
+
+.certi_list-item>li>span {
+  width: fit-content;
+  display: inline-block;
+}
+
+.certi_list-item>li>span:nth-child(2) {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+.certi_list-em>span:first-child::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.7rem;
+  border-radius: 1rem;
+  background-color: #e1d6f4;
+  margin-bottom: -1.7rem;
+}
+
+/* Portfolio */
+
+#Pof {
+  position: relative;
+}
+
+svg.title-flow {
+  width: fit-content;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: rotate(90deg);
+  /* 일단 조정은 나중에 */
+  display: none;
+}
+
+svg.title-flow:first-of-type {
+  right: 0;
+  top: 0;
+}
+
+text {
+  font-size: 4.375rem;
+  font-weight: 700;
+  fill: none;
+  stroke: #fff;
+  stroke-width: .3px;
+  stroke-linejoin: round;
+}
+
+
 @media screen and (min-width: 768px) {
   html {
     font-size: 75%;
   }
+  #info {
+    display: grid;
+    justify-content: center;
+    padding: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  .item1 {
+  grid-area: 1 / 1 / 3 / 1;
+}
+
+.item2 {
+  grid-area: 2 / 2 / 4 / 2;
+}
+
+.item3 {
+  grid-area: 3 / 1 / 5 / 1;
+  grid-column-end: auto;
+}
 }
 
 @media screen and (min-width: 1024px) {
