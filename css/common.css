@@ -33,6 +33,7 @@ li {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 .hidden {
@@ -127,7 +128,7 @@ a {
 .planet-1 {
   width: 8rem;
   height: 8rem;
-  top: 20%;
+  top: 8%;
   left: 10%;
   background-image: url(../images/planet-1.svg);
 }
@@ -135,7 +136,7 @@ a {
 .planet-2 {
   width: 12rem;
   height: 12rem;
-  top: 30%;
+  top: 15%;
   left: -5%;
   background-image: url(../images/planet-2.svg);
 }
@@ -151,16 +152,16 @@ a {
 .planet-4 {
   width: 8rem;
   height: 8rem;
-  top: -2%;
-  left: 0;
+  top: 0%;
+  left: 10%;
   background-image: url(../images/planet-4.svg);
 }
 
 .planet-5 {
   width: 25rem;
   height: 25rem;
-  top: 25%;
-  right: -15%;
+  top: 20%;
+  right: -10%;
   background-image: url(../images/planet-5.svg);
 }
 
@@ -321,7 +322,7 @@ header h1>span {
   font-size: 1.5rem;
   font-weight: 700;
   color: #9575cd;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .item>h3 {
@@ -401,6 +402,16 @@ header h1>span {
 
 #Pof {
   position: relative;
+  background: linear-gradient(to bottom, rgba(18, 194, 233, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(196, 113, 237, 0) 100%);
+}
+
+#Pof .wrap {
+  display: grid;
+  justify-content: center;
+  padding: 2rem;
+  gap: 3rem;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 svg.title-flow {
@@ -409,7 +420,7 @@ svg.title-flow {
   left: 0;
   bottom: 0;
   transform: rotate(90deg);
-  /* 일단 조정은 나중에 */
+  /* rotate는 조정 후에 주기!! */
   display: none;
 }
 
@@ -427,11 +438,121 @@ text {
   stroke-linejoin: round;
 }
 
+#Pof>.wrap>article {
+  max-width: 38rem;
+  border-radius: 2rem;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(0, 0, 0, 0) 71%, rgba(255, 255, 255, 0.2) 100%);
+  box-shadow: 0 0 1.5rem 0 #000000,
+    inset 0 0 0 rgba(255, 255, 255, .75),
+    inset 0px 0px 2px rgba(255, 255, 255, .75);
+}
+
+#Pof>.wrap>article>a {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+#Pof>.wrap>article.mobile>a {
+  height: 37.5rem;
+}
+#Pof>.wrap>article.pc>a {
+  height: 27.5rem;
+}
+#Pof>.wrap>article>a>p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 1.6rem;
+}
+#Pof>.wrap>article>a>span {
+  font-size: 1.5rem;
+  color: #e8e8e8;
+  order: -1;
+  margin-top: 4rem;
+}
+#Pof>.wrap>article>a>img {
+  display: block;
+  margin-top: 4rem;
+}
+
+#Pof>.wrap>article.pc>a>img {
+  width: 90%;
+}
+
+#Pof>.wrap>article.mobile>a>img {
+  width: 50%;
+}
+
+/* Contact */
+
+#contact {
+  width: 80%;
+  max-width: 79rem;
+  margin: 34rem auto 0;
+  padding: 3.6rem 0 2.2rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 0 1.5rem 0 #000000;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  
+}
+
+#contact address {
+  margin-top: 2rem;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 200;
+}
+
+#contact a {
+  display: block;
+  width: 29.5rem;
+  border-radius: 1.25rem;
+  line-height: 5.6rem;
+  background-color: #6200ea;
+  color: #fff;
+  margin: 2rem auto 0.3rem;
+  font-size: 1.5rem;
+  /* 롤오버시 */
+  /* box-shadow: 0px 0px 0.75rem 0.25rem rgba(98, 0, 234, 0.5); */
+}
+
+/* Footer */
+
+footer {
+  padding-top: 3rem;
+  line-height: 7rem;
+  text-align: center;
+  color: #fff;
+}
+
+footer > small {
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 768px) {
   html {
     font-size: 75%;
   }
+
   #info {
     display: grid;
     justify-content: center;
@@ -439,18 +560,19 @@ text {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
+
   .item1 {
-  grid-area: 1 / 1 / 3 / 1;
-}
+    grid-area: 1 / 1 / 3 / 1;
+  }
 
-.item2 {
-  grid-area: 2 / 2 / 4 / 2;
-}
+  .item2 {
+    grid-area: 2 / 2 / 4 / 2;
+  }
 
-.item3 {
-  grid-area: 3 / 1 / 5 / 1;
-  grid-column-end: auto;
-}
+  .item3 {
+    grid-area: 3 / 1 / 5 / 1;
+    grid-column-end: auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
