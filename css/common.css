@@ -60,7 +60,7 @@ a {
   z-index: -1;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .bg_pattern {
@@ -137,7 +137,7 @@ a {
   width: 12rem;
   height: 12rem;
   top: 15%;
-  left: -5%;
+  left: -3%;
   background-image: url(../images/planet-2.svg);
 }
 
@@ -161,7 +161,7 @@ a {
   width: 25rem;
   height: 25rem;
   top: 20%;
-  right: -10%;
+  right: -5%;
   background-image: url(../images/planet-5.svg);
 }
 
@@ -177,7 +177,7 @@ a {
   width: 16rem;
   height: 16rem;
   bottom: 5%;
-  right: -9%;
+  right: -5%;
   background-image: url(../images/planet-2.svg);
 }
 
@@ -247,18 +247,28 @@ a {
 .bg_star {
   position: absolute;
   width: 20%;
-  height: 50vh;
-  background: url(../images/star-1.png) no-repeat top / 50%;
+  height: 150vh;
+  background: url(../images/star-1.svg) no-repeat top / contain;
 }
 
 .star-1 {
-  left: 0;
-  top: 100px;
+  left: -8rem;
+  top: 10rem;
 }
 
 .star-2 {
-  right: 0;
-  top: 500px;
+  right: -8rem;
+  top: 50rem;
+}
+
+.star-3 {
+  left: -8rem;
+  bottom: -10rem;
+}
+
+.star-4 {
+  right: -8rem;
+  bottom: -30rem;
 }
 
 /* 헤더 */
@@ -307,7 +317,7 @@ header h1>.title-circle {
   top: 0;
   left: 4%;
   width: 90%;
-  height: 8rem;
+  height: 7rem;
   border: 1px solid #fff;
   border-radius: 50%;
   animation: title-rotation 5s alternate infinite;
@@ -400,7 +410,7 @@ header h1>span {
   word-break: keep-all;
 }
 
-.item .certi_list {
+.content .certi_list {
   font-size: 1.25rem;
   font-weight: 700;
   color: #673ab7;
@@ -441,12 +451,13 @@ header h1>span {
 
 #Pof {
   margin-top: 24rem;
-  position: relative;
+  
   background: linear-gradient(to bottom, rgba(18, 194, 233, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(196, 113, 237, 0) 100%);
 }
 
 #Pof .wrap {
   display: grid;
+  position: relative;
   justify-content: center;
   padding: 2rem;
   gap: 3rem;
@@ -455,18 +466,26 @@ header h1>span {
 }
 
 svg.title-flow {
-  width: fit-content;
+  width: 45rem;
   position: absolute;
-  left: 0;
-  bottom: 0;
   transform: rotate(90deg);
-  /* rotate는 조정 후에 주기!! */
-  display: none;
+  z-index: -1;
 }
 
 svg.title-flow:first-of-type {
-  right: 0;
-  top: 0;
+  right: -13rem;
+  top: -35rem;
+}
+
+svg.title-flow:nth-of-type(2) {
+  right: -10rem;
+  top: -10rem;
+}
+
+svg.title-flow:nth-of-type(3) {
+  left: -13rem;
+  bottom: -7rem;
+  transform: rotate(270deg);
 }
 
 text {
@@ -487,6 +506,7 @@ text {
     inset 0 0 0 rgba(255, 255, 255, .75),
     inset 0px 0px 2px rgba(255, 255, 255, .75);
   overflow: hidden;
+  transition: 0.2s;
 }
 #Pof>.wrap>article.pc {
   max-height: 32rem;
@@ -563,8 +583,7 @@ text {
   color: #fff;
   margin: 2.5rem auto 0.3rem;
   font-size: 1.5rem;
-  /* 롤오버시 */
-  /* box-shadow: 0px 0px 0.75rem 0.25rem rgba(98, 0, 234, 0.5); */
+  transition: box-shadow 0.2s;
 }
 
 /* Footer */
@@ -623,9 +642,11 @@ footer>small {
 
   #Pof .SB {
     grid-area: 3 / 1 / 7 / 5;
+    margin-left: 8.3rem;
   }
 
   #Pof .GPG {
+    margin-top: -8rem;
     grid-area: 7 / 2 / 11 / 5;
   }
 }
@@ -633,5 +654,33 @@ footer>small {
 @media screen and (min-width: 1024px) {
   html {
     font-size: 80%;
+  }
+  header h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+  header h1>.title-circle {
+    top: 8%;
+    left: -5%;
+    width: 110%;
+  }
+  #Pof .SB {
+    grid-area: 3 / 1 / 7 / 5;
+    margin-left: 0;
+  }
+}
+
+@media screen and (hover: hover) {
+  #Pof article:hover {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.4) 30%, rgba(0, 0, 0, 0) 71%, rgba(255, 255, 255, 0.4) 100%), #fff;
+  }
+  #Pof article:hover a {
+    color: #000;
+  }
+  #Pof article:hover a span {
+    color: #525151;
+  }
+  #contact a:hover {
+    box-shadow: 0 0 1rem 0 #6200ea;
   }
 }
