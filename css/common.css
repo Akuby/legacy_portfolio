@@ -70,64 +70,65 @@ a {
 }
 
 .pattern-1 {
-  top: 0;
-  left: 0;
+  top: -20rem;
+  left: -15rem;
   width: 40%;
   height: 500px;
-  background-image: url(../images/pattern-1.png);
+  background-image: url(../images/pattern-1.svg);
 }
 
 .pattern-2 {
-  top: 40vh;
-  right: 0;
-  width: 45%;
+  top: 14rem;
+  right: -5rem;
+  width: 40%;
   height: 950px;
-  background-image: url(../images/pattern-2.png);
+  background-image: url(../images/pattern-2.svg);
 }
 
 .pattern-3 {
-  top: 40vh;
+  top: 20rem;
   left: 0;
   width: 40%;
   height: 15%;
-  background-image: url(../images/pattern-3.png);
+  background-image: url(../images/pattern-3.svg);
 }
 
 .pattern-4 {
-  top: 310vh;
+  top: 100rem;
+  right: 0;
+  width: 40%;
+  height: 10%;
+  transform: scaleX(-1);
+  background: url(../images/pattern-3.svg) no-repeat;
+}
+
+.pattern-5 {
+  top: 355vh;
+  right: -10rem;
+  width: 40%;
+  height: 15%;
+  transform: scaleX(-1);
+  background: url(../images/pattern-1.svg) no-repeat top / 100%;
+}
+
+.pattern-6 {
+  top: 200vh;
   left: 0;
   width: 40%;
   height: 20%;
   transform: scaleX(-1);
-  background: url(../images/pattern-2.png) no-repeat top / 100%;
-}
-
-.pattern-5 {
-  top: 190vh;
-  right: 0;
-  width: 40%;
-  height: 15%;
-  transform: scaleX(-1);
-  background: url(../images/pattern-3.png) no-repeat top / 100%;
-}
-
-.pattern-6 {
-  bottom: 0;
-  left: 0;
-  width: 40%;
-  height: 15%;
-  background: url(../images/pattern-3.png) no-repeat top / 100%;
+  background: url(../images/pattern-2.svg) no-repeat top / 100%;
 }
 
 .bg_planet {
+  width: 8rem;
+  height: 8rem;
   position: absolute;
   z-index: 1;
   background: no-repeat top left / 100%;
 }
 
 .planet-1 {
-  width: 8rem;
-  height: 8rem;
   top: 8%;
   left: 10%;
   background-image: url(../images/planet-1.svg);
@@ -142,16 +143,12 @@ a {
 }
 
 .planet-3 {
-  width: 8rem;
-  height: 8rem;
   top: 5%;
   right: 0;
   background-image: url(../images/planet-3.svg);
 }
 
 .planet-4 {
-  width: 8rem;
-  height: 8rem;
   top: 0%;
   left: 10%;
   background-image: url(../images/planet-4.svg);
@@ -166,14 +163,32 @@ a {
 }
 
 .planet-6 {
-  width: 8rem;
-  height: 8rem;
+  width: 16rem;
+  height: 16rem;
+  top: 35%;
+  left: 0%;
+  background-image: url(../images/planet-3.svg);
+}
+.planet-7 {
+  width: 15rem;
+  height: 15rem;
+  top: 45%;
+  right: -5%;
+  background-image: url(../images/planet-4.svg);
+}
+.planet-8 {
+  top: 52%;
+  right: 10%;
+  background-image: url(../images/planet-3.svg);
+}
+
+.planet-9 {
   bottom: 12.5%;
   right: 10%;
   background-image: url(../images/planet-1.svg);
 }
 
-.planet-7 {
+.planet-10 {
   width: 16rem;
   height: 16rem;
   bottom: 5%;
@@ -181,7 +196,7 @@ a {
   background-image: url(../images/planet-2.svg);
 }
 
-.planet-8 {
+.planet-11 {
   width: 50rem;
   height: 50rem;
   bottom: -8%;
@@ -262,13 +277,18 @@ a {
 }
 
 .star-3 {
-  left: -8rem;
-  bottom: -10rem;
+  left: -6rem;
+  top: 120rem;
 }
 
 .star-4 {
   right: -8rem;
   bottom: -30rem;
+}
+
+.star-5 {
+  left: -3rem;
+  bottom: -20rem;
 }
 
 /* 헤더 */
@@ -473,23 +493,22 @@ svg.title-flow {
 }
 
 svg.title-flow:first-of-type {
-  right: -13rem;
-  top: -35rem;
+  right: calc(50% - 20rem);
+  top: -12rem;
 }
 
 svg.title-flow:nth-of-type(2) {
-  right: -10rem;
-  top: -10rem;
+  right:calc(50% - 14rem);
+  top: -1rem;
 }
 
 svg.title-flow:nth-of-type(3) {
-  left: -13rem;
-  bottom: -7rem;
-  transform: rotate(270deg);
+  right:calc(50% - 17rem);
+  bottom: -30em;
 }
 
 text {
-  font-size: 4.375rem;
+  font-size: 3rem;
   font-weight: 700;
   fill: none;
   stroke: #fff;
@@ -649,6 +668,20 @@ footer>small {
     margin-top: -8rem;
     grid-area: 7 / 2 / 11 / 5;
   }
+  svg.title-flow:first-of-type {
+    top: -35rem;
+  }
+  
+  svg.title-flow:nth-of-type(2) {
+    top: -10rem;
+  }
+  
+  svg.title-flow:nth-of-type(3) {
+    bottom: -20em;
+  }
+  text {
+    font-size: 4rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -679,8 +712,5 @@ footer>small {
   }
   #Pof article:hover a span {
     color: #525151;
-  }
-  #contact a:hover {
-    box-shadow: 0 0 1rem 0 #6200ea;
   }
 }
