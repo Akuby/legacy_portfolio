@@ -28,6 +28,7 @@
   }
 
   renderStars();
+
   // card effect
   let cards = document.getElementsByClassName('rotate3D');
   let renderRotate, clearRotate;
@@ -44,16 +45,9 @@
     let w = this.offsetWidth;
     let h = this.offsetHeight;
 
-    /*
-    ~ - binary NOT, also used for fast rounding
-    (w/2-coorX) - symmetricity
-    (80/w) - we need to decrease the symmetricity subtraction depending on element width/height
-    /10 - we use degrees so we need one decimals
-    */
     let posX = ~((w / 2 - coorX) * (80 / w)) / 10;
     let posY = ~~((h / 2 - coorY) * (80 / h)) / 10;
 
-    // used for transition on mouse leave
     if (this.children[0].classList.contains("onLeave")) {
       contentEl.classList.remove("onLeave");
     }
@@ -76,4 +70,9 @@
       cards[i].addEventListener("mousemove", renderRotate);
       cards[i].addEventListener("mouseleave", clearRotate);
     }
+  }
+
+  // background parallax
+  function bgParallax() {
+
   }
