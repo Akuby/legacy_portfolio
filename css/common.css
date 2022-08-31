@@ -297,6 +297,7 @@ header .title::before {
 
 header h1 {
   font-size: 3rem;
+  line-height: 4.3rem;
   position: relative;
 }
 
@@ -364,6 +365,7 @@ header h1>span {
 
 .content>h3 {
   font-size: 2.5rem;
+  line-height: 3.6rem;
   margin-bottom: 3.1rem;
 }
 
@@ -393,8 +395,8 @@ header h1>span {
 
 .content>dl>dd {
   margin-top: 0.8rem;
-  font-size: 1.25rem;
-  line-height: 2.2rem;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
   word-break: keep-all;
 }
 
