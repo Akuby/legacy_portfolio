@@ -164,6 +164,7 @@ a {
   right: -10%;
   background-image: url(../images/planet-5.svg);
 }
+
 .planet-6 {
   width: 8rem;
   height: 8rem;
@@ -171,6 +172,7 @@ a {
   right: 10%;
   background-image: url(../images/planet-1.svg);
 }
+
 .planet-7 {
   width: 16rem;
   height: 16rem;
@@ -334,39 +336,52 @@ header h1>span {
 .item {
   width: 100%;
   max-width: 38rem;
-  background-color: #fff;
-  border-radius: 2rem;
-  padding: 3rem 2.8rem 0;
-  box-shadow: 0 0 1.5rem 0 #000000;
 }
 
-.item>p {
+.card {
+  perspective: 1200px;
+  position: relative;
+}
+
+.content.onLeave {
+  transition: transform .3s ease;
+}
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  padding: 3rem 2.8rem 0;
+  background-color: #fff;
+  pointer-events: none
+}
+.content>p {
   font-size: 1.5rem;
   font-weight: 700;
   color: #9575cd;
   margin-bottom: 2rem;
 }
 
-.item>h3 {
+.content>h3 {
   font-size: 2.5rem;
   margin-bottom: 3.1rem;
 }
 
-.item>h3>span {
+.content>h3>span {
   color: #673ab7;
 }
 
-.item>dl {
+.content>dl {
   margin-bottom: 3.1rem;
 }
 
-.item>dl>dt {
+.content>dl>dt {
   width: fit-content;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.item>dl>dt::after {
+.content>dl>dt::after {
   content: "";
   display: block;
   width: 102%;
@@ -376,7 +391,7 @@ header h1>span {
   margin-top: -1rem;
 }
 
-.item>dl>dd {
+.content>dl>dd {
   margin-top: 0.8rem;
   font-size: 1.25rem;
   line-height: 2.2rem;
@@ -485,12 +500,14 @@ text {
   font-weight: 700;
   margin-top: 1.6rem;
 }
+
 #Pof>.wrap>article>a>span {
   font-size: 1.5rem;
   color: #e8e8e8;
   order: -1;
   margin-top: 4rem;
 }
+
 #Pof>.wrap>article>a>img {
   display: block;
   margin-top: 4rem;
@@ -552,7 +569,7 @@ footer {
   color: #fff;
 }
 
-footer > small {
+footer>small {
   font-size: 1rem;
 }
 
@@ -592,12 +609,15 @@ footer > small {
   #Pof .GHS {
     grid-area: 1 / 5 / 5 / 8;
   }
+
   #Pof .OMDB {
     grid-area: 5 / 5 / 9 / 9;
   }
+
   #Pof .SB {
     grid-area: 3 / 1 / 7 / 5;
   }
+
   #Pof .GPG {
     grid-area: 7 / 2 / 11 / 5;
   }
