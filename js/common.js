@@ -80,6 +80,7 @@
   const bgStar2 = document.querySelectorAll('.star--5');
   const bgPatternNormal = document.querySelectorAll('.pattern--nor');
   const bgPatternReverse = document.querySelectorAll('.pattern--rev');
+  const ufo = document.querySelector('.title-ufo');
   const typoFlow = document.querySelectorAll('.title-flow');
 
   function bgParallax() {
