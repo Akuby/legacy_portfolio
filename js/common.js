@@ -110,4 +110,19 @@
 
   window.addEventListener('scroll', bgParallax)
 
-  
+  // resizing
+
+function resize () {
+  let winWidth = window.innerWidth;
+  if (winWidth < 768) {
+    typoFlow.forEach((el) => {
+      el.style.transform = 'translateY(0rem) rotate(0deg)'
+    })
+  } else if (winWidth >= 768) {
+    typoFlow.forEach((el) => {
+      el.style.transform = `translateY(${scroll / -40}rem) rotate(90deg)`
+    })
+  }
+}
+
+window.addEventListener('resize', resize)  
