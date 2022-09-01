@@ -73,6 +73,32 @@
   }
 
   // background parallax
+  const pg1 = document.querySelectorAll('.pg-1');
+  const pg2 = document.querySelectorAll('.pg-2');
+  const pg3 = document.querySelectorAll('.pg-3');
+  const pg4 = document.querySelectorAll('.pg-4');
+  const pg5 = document.querySelectorAll('.pg-5');
+  const pg6 = document.querySelectorAll('.bg_pattern');
   function bgParallax() {
-
+    let scroll = -window.scrollY;
+    pg1.forEach((el) => {
+      el.style.transform = `translateY(${scroll / 50}rem)`
+    })
+    pg2.forEach((el) => {
+      el.style.transform = `translateY(${scroll / 90}rem)`
+    })
+    pg3.forEach((el) => {
+      el.style.transform = `translateY(${scroll / 110}rem)`
+    })
+    pg4.forEach((el) => {
+      el.style.transform = `translateY(${scroll / 200}rem)`
+    })
+    pg5.forEach((el) => {
+      el.style.transform = `translateY(${scroll / 210}rem)`
+    })
+    pg6.forEach((el) => {
+      el.style.transform = `translateY(${scroll / -20}rem)`
+    })
   }
+
+  window.addEventListener('scroll', bgParallax)

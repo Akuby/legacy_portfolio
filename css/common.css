@@ -54,6 +54,29 @@ a {
   border-radius: 10px;
 }
 
+@keyframes glow {
+  0% {
+    opacity: 0;
+    transform: scale(1, 1);
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(2, 2);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 /* 배경 */
 #background {
   position: absolute;
@@ -65,59 +88,48 @@ a {
 
 .bg_pattern {
   position: absolute;
-  max-width: 780px;
   background: no-repeat top / 100%;
+  width: 50rem;
+  height: 20%;
 }
 
 .pattern-1 {
   top: -20rem;
   left: -15rem;
-  width: 40%;
-  height: 500px;
   background-image: url(../images/pattern-1.svg);
 }
 
 .pattern-2 {
   top: 14rem;
   right: -5rem;
-  width: 40%;
-  height: 950px;
   background-image: url(../images/pattern-2.svg);
 }
 
 .pattern-3 {
   top: 20rem;
   left: 0;
-  width: 40%;
-  height: 15%;
   background-image: url(../images/pattern-3.svg);
 }
 
 .pattern-4 {
   top: 100rem;
   right: 0;
-  width: 40%;
-  height: 10%;
   transform: scaleX(-1);
-  background: url(../images/pattern-3.svg) no-repeat;
+  background-image: url(../images/pattern-3.svg);
 }
 
 .pattern-5 {
-  top: 355vh;
-  right: -10rem;
-  width: 40%;
-  height: 15%;
+  top: 200vh;
+  left: -5rem;
   transform: scaleX(-1);
-  background: url(../images/pattern-1.svg) no-repeat top / 100%;
+  background-image: url(../images/pattern-2.svg);
 }
 
 .pattern-6 {
-  top: 200vh;
-  left: 0;
-  width: 40%;
-  height: 20%;
+  top: 355vh;
+  right: -10rem;
   transform: scaleX(-1);
-  background: url(../images/pattern-2.svg) no-repeat top / 100%;
+  background-image: url(../images/pattern-1.svg);
 }
 
 .bg_planet {
@@ -169,6 +181,7 @@ a {
   left: 0%;
   background-image: url(../images/planet-3.svg);
 }
+
 .planet-7 {
   width: 15rem;
   height: 15rem;
@@ -176,6 +189,7 @@ a {
   right: -5%;
   background-image: url(../images/planet-4.svg);
 }
+
 .planet-8 {
   top: 52%;
   right: 10%;
@@ -183,7 +197,7 @@ a {
 }
 
 .planet-9 {
-  bottom: 12.5%;
+  bottom: -6%;
   right: 10%;
   background-image: url(../images/planet-1.svg);
 }
@@ -191,7 +205,7 @@ a {
 .planet-10 {
   width: 16rem;
   height: 16rem;
-  bottom: 5%;
+  bottom: -5%;
   right: -5%;
   background-image: url(../images/planet-2.svg);
 }
@@ -199,7 +213,7 @@ a {
 .planet-11 {
   width: 50rem;
   height: 50rem;
-  bottom: -8%;
+  bottom: -15%;
   left: -15%;
   background-image: url(../images/planet-5.svg);
 }
@@ -216,47 +230,11 @@ a {
   width: 1.5px;
   height: 1.5px;
   position: absolute;
-  border: #f0f0f0 0px solid;
+  border: 0px solid #f0f0f0;
   border-radius: 50%;
   opacity: 0;
   box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.5);
-  animation-name: glow;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes glow {
-  0% {
-    opacity: 0;
-    transform: scale(1, 1);
-  }
-
-  20% {
-    opacity: 0.5;
-  }
-
-  35% {
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(2, 2);
-  }
-
-  100% {
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes title-rotation {
-  0% {
-    transform: skew(10deg, 10deg);
-  }
-
-  100% {
-    transform: skew(-10deg, -10deg);
-  }
+  animation: glow 5s ease-in-out infinite;
 }
 
 .bg_star {
@@ -334,13 +312,13 @@ header h1 {
 header h1>.title-circle {
   z-index: -1;
   position: absolute;
-  top: 0;
-  left: 4%;
+  top: 11%;
+  left: 6%;
   width: 90%;
   height: 7rem;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 50%;
-  animation: title-rotation 5s alternate infinite;
+  transform: rotate(8deg);
 }
 
 
@@ -377,6 +355,7 @@ header h1>span {
 .content.onLeave {
   transition: transform .3s ease;
 }
+
 .content {
   position: relative;
   width: 100%;
@@ -386,6 +365,7 @@ header h1>span {
   background-color: #fff;
   pointer-events: none
 }
+
 .content>p {
   font-size: 1.5rem;
   font-weight: 700;
@@ -471,7 +451,7 @@ header h1>span {
 
 #Pof {
   margin-top: 24rem;
-  
+
   background: linear-gradient(to bottom, rgba(18, 194, 233, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(196, 113, 237, 0) 100%);
 }
 
@@ -498,12 +478,12 @@ svg.title-flow:first-of-type {
 }
 
 svg.title-flow:nth-of-type(2) {
-  right:calc(50% - 14rem);
+  right: calc(50% - 14rem);
   top: -1rem;
 }
 
 svg.title-flow:nth-of-type(3) {
-  right:calc(50% - 17rem);
+  right: calc(50% - 17rem);
   bottom: -30em;
 }
 
@@ -527,9 +507,11 @@ text {
   overflow: hidden;
   transition: 0.2s;
 }
+
 #Pof>.wrap>article.pc {
   max-height: 32rem;
 }
+
 #Pof>.wrap>article>a {
   width: 100%;
   height: 100%;
@@ -668,17 +650,19 @@ footer>small {
     margin-top: -8rem;
     grid-area: 7 / 2 / 11 / 5;
   }
+
   svg.title-flow:first-of-type {
     top: -35rem;
   }
-  
+
   svg.title-flow:nth-of-type(2) {
     top: -10rem;
   }
-  
+
   svg.title-flow:nth-of-type(3) {
     bottom: -20em;
   }
+
   text {
     font-size: 4rem;
   }
@@ -688,15 +672,18 @@ footer>small {
   html {
     font-size: 80%;
   }
+
   header h1 {
     font-size: 4rem;
     line-height: 5rem;
   }
+
   header h1>.title-circle {
     top: 8%;
     left: -5%;
     width: 110%;
   }
+
   #Pof .SB {
     grid-area: 3 / 1 / 7 / 5;
     margin-left: 0;
@@ -707,9 +694,11 @@ footer>small {
   #Pof article:hover {
     background: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.4) 30%, rgba(0, 0, 0, 0) 71%, rgba(255, 255, 255, 0.4) 100%), #fff;
   }
+
   #Pof article:hover a {
     color: #000;
   }
+
   #Pof article:hover a span {
     color: #525151;
   }
