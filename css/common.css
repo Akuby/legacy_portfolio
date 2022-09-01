@@ -405,7 +405,8 @@ header h1>span {
   border-radius: 2rem;
   padding: 3rem 2.8rem 0;
   background-color: #fff;
-  pointer-events: none
+  pointer-events: none;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
 }
 
 .content>p {
@@ -642,8 +643,6 @@ footer>small {
 }
 
 
-
-
 @media screen and (min-width: 768px) {
   html {
     font-size: 60%;
@@ -712,7 +711,7 @@ footer>small {
   }
 
   svg.title-flow:nth-of-type(3) {
-    bottom: 67em;
+    bottom: 46em;
     left: -8rem;
   }
 
@@ -743,6 +742,9 @@ footer>small {
     margin-left: 0;
   }
   
+  svg.title-flow:nth-of-type(3) {
+    bottom: 67em;
+  }
 }
 
 @media screen and (min-width: 1024px) and (hover: hover) {
