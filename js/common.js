@@ -64,13 +64,6 @@
     contentEl.classList.add("onLeave");
 
   };
-  
-  if (window.innerWidth >= 768) {
-    cards.forEach(el => {
-      el.addEventListener("mousemove", renderRotate);
-      el.addEventListener("mouseleave", clearRotate);
-    })
-  }
 
   // background parallax
   const bgPlanet1 = document.querySelectorAll('.planet--1');
@@ -118,9 +111,17 @@ function resize () {
     typoFlow.forEach((el) => {
       el.style.transform = 'translateY(0rem) rotate(0deg)'
     })
+    cards.forEach(el => {
+      el.removeEventListener("mousemove", renderRotate);
+      el.removeEventListener("mouseleave", clearRotate);
+    })
   } else if (winWidth >= 768) {
     typoFlow.forEach((el) => {
       el.style.transform = `translateY(${scroll / -40}rem) rotate(90deg)`
+    })
+    cards.forEach(el => {
+      el.addEventListener("mousemove", renderRotate);
+      el.addEventListener("mouseleave", clearRotate);
     })
   }
 }
