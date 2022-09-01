@@ -18,7 +18,7 @@
     return star;
   }
 
-  function renderStars(amount = 30) {
+  function renderStars(amount = 40) {
     const container = document.getElementById("container");
     const placeholdersArray = Array(amount).fill("star_placeholder");
     const starsArray = placeholdersArray.map((starPlacholder, index) =>
@@ -30,7 +30,7 @@
   renderStars();
 
   // card effect
-  let cards = document.getElementsByClassName('rotate3D');
+  let cards = document.querySelectorAll('.rotate3D');
   let renderRotate, clearRotate;
 
   const shadowBlur = 20,
@@ -64,41 +64,49 @@
     contentEl.classList.add("onLeave");
 
   };
-
+  
   if (window.innerWidth >= 768) {
-    for (let i = 0; i < cards.length; i++) {
-      cards[i].addEventListener("mousemove", renderRotate);
-      cards[i].addEventListener("mouseleave", clearRotate);
-    }
+    cards.forEach(el => {
+      el.addEventListener("mousemove", renderRotate);
+      el.addEventListener("mouseleave", clearRotate);
+    })
   }
 
   // background parallax
-  const pg1 = document.querySelectorAll('.pg-1');
-  const pg2 = document.querySelectorAll('.pg-2');
-  const pg3 = document.querySelectorAll('.pg-3');
-  const pg4 = document.querySelectorAll('.pg-4');
-  const pg5 = document.querySelectorAll('.pg-5');
-  const pg6 = document.querySelectorAll('.bg_pattern');
+  const bgPlanet1 = document.querySelectorAll('.planet--1');
+  const bgPlanet2 = document.querySelectorAll('.planet--2');
+  const bgPlanet3 = document.querySelectorAll('.planet--3');
+  const bgStar1 = document.querySelectorAll('.star--4');
+  const bgStar2 = document.querySelectorAll('.star--5');
+  const bgPatternNormal = document.querySelectorAll('.pattern--nor');
+  const bgPatternReverse = document.querySelectorAll('.pattern--rev');
+  const typoFlow = document.querySelectorAll('.title-flow');
+
   function bgParallax() {
     let scroll = -window.scrollY;
-    pg1.forEach((el) => {
-      el.style.transform = `translateY(${scroll / 50}rem)`
-    })
-    pg2.forEach((el) => {
-      el.style.transform = `translateY(${scroll / 90}rem)`
-    })
-    pg3.forEach((el) => {
-      el.style.transform = `translateY(${scroll / 110}rem)`
-    })
-    pg4.forEach((el) => {
-      el.style.transform = `translateY(${scroll / 200}rem)`
-    })
-    pg5.forEach((el) => {
-      el.style.transform = `translateY(${scroll / 210}rem)`
-    })
-    pg6.forEach((el) => {
-      el.style.transform = `translateY(${scroll / -20}rem)`
+
+    function trans(name, scrollRatio) {
+      name.forEach(el => {
+        el.style.transform = 'translateY('+ (scroll / scrollRatio) +'rem)'
+      })
+    }
+    trans(bgPlanet1, 50)
+    trans(bgPlanet2, 90)
+    trans(bgPlanet3, 110)
+    trans(bgStar1, -30)
+    trans(bgStar2, -40)
+    trans(bgPatternNormal, -20)
+    if (window.innerWidth >= 768) {
+      typoFlow.forEach((el) => {
+        el.style.transform = `translateY(${scroll / -40}rem) rotate(90deg)`
+      })
+    }
+    
+    bgPatternReverse.forEach((el) => {
+      el.style.transform = `translateY(${scroll / -20}rem) scaleX(-1)`
     })
   }
 
   window.addEventListener('scroll', bgParallax)
+
+  

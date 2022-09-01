@@ -100,7 +100,7 @@ a {
 }
 
 .pattern-2 {
-  top: 14rem;
+  top: 18rem;
   right: -5rem;
   background-image: url(../images/pattern-2.svg);
 }
@@ -112,21 +112,21 @@ a {
 }
 
 .pattern-4 {
-  top: 100rem;
+  top: 70rem;
   right: 0;
   transform: scaleX(-1);
   background-image: url(../images/pattern-3.svg);
 }
 
 .pattern-5 {
-  top: 200vh;
+  top: 70rem;
   left: -5rem;
   transform: scaleX(-1);
   background-image: url(../images/pattern-2.svg);
 }
 
 .pattern-6 {
-  top: 355vh;
+  top: 155rem;
   right: -10rem;
   transform: scaleX(-1);
   background-image: url(../images/pattern-1.svg);
@@ -316,7 +316,7 @@ header h1>.title-circle {
   left: 6%;
   width: 90%;
   height: 7rem;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   border-radius: 50%;
   transform: rotate(8deg);
 }
@@ -466,25 +466,24 @@ header h1>span {
 }
 
 svg.title-flow {
-  width: 45rem;
+  width: 26em;
   position: absolute;
-  transform: rotate(90deg);
+  right: calc(50% - 13rem);
   z-index: -1;
 }
 
 svg.title-flow:first-of-type {
-  right: calc(50% - 20rem);
-  top: -12rem;
+  width: 30em;
+  right: calc(50% - 15rem);
+  top: -20rem;
 }
 
 svg.title-flow:nth-of-type(2) {
-  right: calc(50% - 14rem);
-  top: -1rem;
+  top: -13rem;
 }
 
 svg.title-flow:nth-of-type(3) {
-  right: calc(50% - 17rem);
-  bottom: -30em;
+  bottom: -25em;
 }
 
 text {
@@ -607,7 +606,9 @@ footer>small {
   html {
     font-size: 60%;
   }
-
+  .pattern-2 {
+    top: -35rem;
+  }
   #info {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -651,16 +652,26 @@ footer>small {
     grid-area: 7 / 2 / 11 / 5;
   }
 
+  svg.title-flow {
+    width: 45rem;
+    position: absolute;
+    transform: rotate(90deg);
+    z-index: -1;
+  }
   svg.title-flow:first-of-type {
-    top: -35rem;
+    width: 40rem;
+    top: -74rem;
+    right: 0rem;
   }
 
   svg.title-flow:nth-of-type(2) {
-    top: -10rem;
+    top: -56em;
+    right: 5rem;
   }
 
   svg.title-flow:nth-of-type(3) {
-    bottom: -20em;
+    bottom: 67em;
+    left: -8rem;
   }
 
   text {
@@ -682,12 +693,14 @@ footer>small {
     top: 8%;
     left: -5%;
     width: 110%;
+    border-width: 2px;
   }
 
   #Pof .SB {
     grid-area: 3 / 1 / 7 / 5;
     margin-left: 0;
   }
+  
 }
 
 @media screen and (min-width: 1024px) and (hover: hover) {
