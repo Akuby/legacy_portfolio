@@ -78,22 +78,22 @@
 
   function bgParallax() {
     let scroll = -window.scrollY;
-
     function trans(name, scrollRatio) {
       name.forEach(el => {
         el.style.transform = 'translateY('+ (scroll / scrollRatio) +'rem)'
       })
     }
-    trans(bgPlanet1, 50)
-    trans(bgPlanet2, 90)
-    trans(bgPlanet3, 110)
-    trans(bgStar1, -30)
-    trans(bgStar2, -40)
-    trans(bgPatternNormal, -20)
+    trans(bgPlanet1, 50);
+    trans(bgPlanet2, 90);
+    trans(bgPlanet3, 110);
+    trans(bgStar1, -30);
+    trans(bgStar2, -40);
+    trans(bgPatternNormal, -20);
     if (window.innerWidth >= 768) {
       typoFlow.forEach((el) => {
         el.style.transform = `translateY(${scroll / -40}rem) rotate(90deg)`
       })
+      typoFlow[2].children[0].style.fillOpacity = (-scroll - 2745) / 833
     }
     
     bgPatternReverse.forEach((el) => {
